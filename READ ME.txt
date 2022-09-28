@@ -1,0 +1,5 @@
+Needs "user" and "token" in headers
+more documentation, 
+
+http://localhost:8000/docs
+http://localhost:8000/redoc

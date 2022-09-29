@@ -4,6 +4,7 @@ from decouple import config
 from fastapi.templating import Jinja2Templates
 
 class Settings:
+    api_url = config('API_URL')
     api_name = config('API_NAME')
     api_version = config('API_VERSION')
     token = config('TOKEN')

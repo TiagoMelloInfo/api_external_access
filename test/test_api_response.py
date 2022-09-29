@@ -1,8 +1,11 @@
 import requests
 
-url = 'http://localhost:8000/github'
+from ..settings import Settings
 
-headers = {'user': 'tdd', 'token': 'abc'}
+settings = Settings()
+url = f'{settings.api_url}/{settings.api_name}'
+
+headers = {'user': 'tdd', 'token': settings.token}
 payload = {'user': 'TiagoMelloInfo'}
 
 #Scene 2

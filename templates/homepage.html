@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+{% block title %} 
+  <title>{{ title }}</title>
+{% endblock %} 
+
+{% block content %} 
+  <div class="container">
+    <h1>{{ msg }}</h1>
+    {% for item in data %}
+      <table class="item_list">
+        {% for key_dict, value_dict in item.items() %}
+          <tr>
+            {% if key_dict == 'url' %}
+              <td class="key_dict">{{ key_dict }}</td>
+              <td class="value_dict"><a href="{{ value_dict }}" target="_blank">{{ value_dict }}</a></td>
+            {% else %}
+              <td class="key_dict">{{ key_dict }}</td>
+              <td class="value_dict">{{ value_dict }}</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </table>
+      <br>
+    {% endfor %}
+  </div>
+  <style>
+    .key_dict{
+      text-align: right; 
+      padding: 5px; 
+      background: black; 
+      color: white;
+    }
+
+    .value_dict{
+      padding-left: 10px; 
+      background: rgba(0,0,0,.2); 
+      width: 650px;
+    }
+  </style>
+{% endblock %} 
